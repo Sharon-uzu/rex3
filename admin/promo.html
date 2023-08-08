@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promo Code - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark">
+    <header class="dark-bb" style="background-color:#4f5966 ">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div id="promoCodeDiv" runat="server" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Generate Promo Code</h5>
+                                    <div class="settings-profile">
+                                        <form action="promo.html" id="AddPromoCodeForm" method="post">                                            <input type="text" hidden="" value="PR76P3J61N" name="GeneratedCode" class="form-control">
+                                            <div class="form-row">
+                                                <div class="col-md-12">
+                                                    <label for="newPass">Generated Code</label>
+                                                </div>
+                                                <div class="input-group col-md-12">
+                                                    <input type="text" disabled="" placeholder="Promo code" value="PR76P3J61N" class="form-control">
+                                                    <div class="input-group-prepend">
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            å                                                                   <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                    </div>
+                                </div>
+                            </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Promo Codes</h5>
+                                <div class="wallet-history">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Promo Code</th>
+                                                <th>Used by</th>
+                                                <th>Used</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                            <tr>
+                                                                <td><label style="width:50px;">1</label></td>
+                                                                <td><label style="width:120px;">PR0J5PDG3Q</label></td>
+                                                                <td><label style="width:120px;"></label></td>
+                                                                        <td title="Unused promo code">
+                                                                            <i class="icon ion-md-close-circle-outline red"></i>
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="14" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">2</label></td>
+                                                                <td><label style="width:120px;">PRZLZT34GT</label></td>
+                                                                <td><label style="width:120px;"></label></td>
+                                                                        <td title="Unused promo code">
+                                                                            <i class="icon ion-md-close-circle-outline red"></i>
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="13" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">3</label></td>
+                                                                <td><label style="width:120px;">PRPP63LMXW</label></td>
+                                                                <td><label style="width:120px;">debyhart198@gmail.com</label></td>
+                                                                        <td title="Used promo code">
+                                                                            <i class="icon ion-md-checkmark-circle-outline green"></i>
+
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="12" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">4</label></td>
+                                                                <td><label style="width:120px;">PRC0ETPEJR</label></td>
+                                                                <td><label style="width:120px;">tshepo8403@gmail.com</label></td>
+                                                                        <td title="Used promo code">
+                                                                            <i class="icon ion-md-checkmark-circle-outline green"></i>
+
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="11" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">5</label></td>
+                                                                <td><label style="width:120px;">PRZA0D1ZVO</label></td>
+                                                                <td><label style="width:120px;">paulo.yarisantos@gmail.com</label></td>
+                                                                        <td title="Used promo code">
+                                                                            <i class="icon ion-md-checkmark-circle-outline green"></i>
+
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="10" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">6</label></td>
+                                                                <td><label style="width:120px;">PRN2TM5DXG</label></td>
+                                                                <td><label style="width:120px;">folstromtc@gmail.com</label></td>
+                                                                        <td title="Used promo code">
+                                                                            <i class="icon ion-md-checkmark-circle-outline green"></i>
+
+                                                                        </td>
+                                                            <td>
+                                                                    <form action="/Admin/Delete" id="DeletePromoCodeForm" method="post">                                                                    <input value="9" name="Row" hidden="">
+                                                                    <input value="PromoCodes" name="Table" hidden="">
+                                                                    <input value="PromoCode" name="WebPage" hidden="">
+                                                                    <button type="submit" class="btn-2" tooltip="Permanently delete promo code">
+                                                                        Delete
+                                                                    </button>
+                                                                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHHrEvwaCeue0RNYoX6zqPuHOj5ivkkJdr-Rzv4Rxd0j3MHDMmHKprNo3ZDdx18djjZmWZ6cr0d-_wXFkkRqornXxqVdOMob4l0o3n8TeoOdLTRZQFqUeJXSqWzL1BzBtWg"></form>                                                            </td>
+                                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#AddPromoCodeForm", function () {
+        return confirm("Are you sure you want to add this promo code?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#DeletePromoCodeForm", function () {
+        return confirm("Are you sure you want to delete this promo code?");
+    });</script>
+
+
+    
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body>
+</html>

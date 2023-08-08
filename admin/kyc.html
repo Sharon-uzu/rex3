@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KYC - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark" style="background-color:#4f5966 ">
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div id="kycDiv" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">KYC Documents</h5>
+                                <div class="wallet-history">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>User</th>
+                                                <th>Number Type</th>
+                                                <th>Number</th>
+                                                <th>Gender</th>
+                                                <th>DOB</th>
+                                                <th>ID Type</th>
+                                                <th>ID Front</th>
+                                                <th>ID Back</th>
+                                                <th>Proof Of Residence</th>
+                                                <th>Approve</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                            <tr>
+
+                                                                <td><label style="width:50px;">1</label></td>
+                                                                <td><label style="width:200px;">sibanandam@yahoo.co.uk</label></td>
+                                                                <td><label style="width:75px;">Social Security Number</label></td>
+                                                                <td><label style="width:150px;">223858927385</label></td>
+                                                                <td><label style="width:100px;">M</label></td>
+                                                                <td><label style="width:150px;">1969-07-01</label></td>
+                                                                <td><label style="width:100px;">National ID Card</label></td>
+
+                                                                <td><a title="Enlarge" target="_blank" href="../../KYCDocuments/sibanandam@yahoo.co.uk-ValidIDFrontIMG20230521010738.jpg"><img style="width:100px;" src="../../KYCDocuments/sibanandam@yahoo.co.uk-ValidIDFrontIMG20230521010738.jpg"></a></td>
+                                                                <td><a title="Enlarge" target="_blank" href="../../KYCDocuments/sibanandam@yahoo.co.uk-ValidIDBackIMG20230521010753.jpg"><img style="width:100px;" src="../../KYCDocuments/sibanandam@yahoo.co.uk-ValidIDBackIMG20230521010753.jpg"></a></td>
+                                                                <td><a title="Enlarge" target="_blank" href="../../KYCDocuments/sibanandam@yahoo.co.uk-ProofOfResidenceIMG-20221228-WA0039.jpg"><img style="width:100px;" src="../../KYCDocuments/sibanandam@yahoo.co.uk-ProofOfResidenceIMG-20221228-WA0039.jpg"></a></td>
+                                                                        <td title="Pending">
+                                                                            <i class="icon ion-md-refresh-circle"></i>
+                                                                        </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/SignDocument" id="SignDocumentForm1" method="post">                                                                                    <input value="6" name="Row" hidden="">
+                                                                                    <input value="true" name="Signature" hidden="">
+                                                                                    <input value="sibanandam@yahoo.co.uk" name="User" hidden="">
+                                                                                    <input value="KYC" name="Table" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(6)" style="color:white;">Approve</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEf25-ZSBDFHLQS4Sr6bCyo4xMJID14OmKDM_Q3H3nMhaVypBF-B02rRjICTozLLUcedwKKObmn3OtEm-pwAyO6eQn-GXfPQ3uvo6H3hWr33tbccGaNb7ifKxzPnK17Npk"></form><form action="/Admin/SignDocument" id="SignDocumentForm2" method="post">                                                                                    <input value="6" name="Row" hidden="">
+                                                                                    <input value="false" name="Signature" hidden="">
+                                                                                    <input value="sibanandam@yahoo.co.uk" name="User" hidden="">
+                                                                                    <input value="KYC" name="Table" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(6)" style="color:white;">DisApprove</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEf25-ZSBDFHLQS4Sr6bCyo4xMJID14OmKDM_Q3H3nMhaVypBF-B02rRjICTozLLUcedwKKObmn3OtEm-pwAyO6eQn-GXfPQ3uvo6H3hWr33tbccGaNb7ifKxzPnK17Npk"></form><form action="/Admin/Delete" id="DeleteKYCForm" method="post">                                                                                    <input value="6" name="Row" hidden="">
+                                                                                    <input value="KYCRoom" name="Table" hidden="">
+                                                                                    <input value="KYC" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete Document</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEf25-ZSBDFHLQS4Sr6bCyo4xMJID14OmKDM_Q3H3nMhaVypBF-B02rRjICTozLLUcedwKKObmn3OtEm-pwAyO6eQn-GXfPQ3uvo6H3hWr33tbccGaNb7ifKxzPnK17Npk"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#SignDocumentForm1", function () {
+        return confirm("Are you sure you want to approve this document?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#SignDocumentForm2", function () {
+        return confirm("Are you sure you want to disapprove this document?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#DeleteKYCForm", function () {
+        return confirm("Are you sure you want to delete this document?");
+    });</script>
+
+
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body></html>

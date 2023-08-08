@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Sign In - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark">
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="AdminSignin.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="AdminSignin.html">Users</a>
+                            <a class="dropdown-item" href="AdminSignin.html">Referrals</a>
+                            <a class="dropdown-item" href="AdminSignin.html">KYC</a>
+                            <a class="dropdown-item" href="AdminSignin.html">Transaction Log</a>
+                            <a class="dropdown-item" href="AdminSignin.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="AdminSignin.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="AdminSignin.html">Admins</a>
+                            <a class="dropdown-item" href="AdminSignin.html">App Default</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="AdminSignin.html">Plans</a>
+                            <a class="dropdown-item" href="AdminSignin.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="AdminSignin.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+        </nav>
+    </header>
+
+      
+<form action="adminUsers.html" method="post">
+    <div class="vh-100 d-flex justify-content-center">
+    <div class="form-access my-auto">
+        <div style="border:grey; border-width:1px; border-style:solid; padding:40px;">
+            <br>
+            <br>
+            <span>Sign In</span>
+            <div class="form-group">
+                <input type="text" class="form-control" name="Username" placeholder="Username" required="">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="Password" placeholder="Password" required="">
+            </div>
+            <br>
+            <span>
+                <button type="submit" validationgroup="signInGroup" class="btn btn-primary">Sign In</button>
+            </span>
+        </div>
+    </div>
+</div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHFpqXyAfhh1G7y1N_KY8C5zAa_7nFR2pN4u-RXhUShnR_lnRrOGqVfhq2-jyJrdDhLtVOS3_Nt9uZB98mKY5awWSj5bz_kKAUMw2F36l5rkLsw978PPts810F2KZaKOtiY"></form>
+
+    <nav class="mobile-nav">
+        <a class="bloc-icon" title="Plans" href="AdminSignin.html">
+            <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+        </a>
+        <a class="bloc-icon" title="Portfolios" href="AdminSignin.html">
+            <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+        </a>
+        <a class="bloc-icon" title="Notifications" href="AdminSignin.html">
+            <img src="../portal/assets/img/Notification_26px.png" width="20">
+        </a>
+        <a class="bloc-icon" title="FAQ" href="AdminSignin.html">
+            <img src="../portal/assets/img/About_26px.png" width="20">
+        </a>
+        <a class="bloc-icon" title="Users" href="AdminSignin.html">
+            <img src="../portal/assets/img/User Male_26px.png" width="20">
+        </a>
+    </nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body></html>

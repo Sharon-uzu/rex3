@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transaction Log - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark">
+    <header class="dark-bb" style="background-color:#4f5966 ">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div id="transactionLogDiv" runat="server" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Transaction Log</h5>
+                                <div class="wallet-history">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>User</th>
+                                                <th>Balance</th>
+                                                <th>RefBonus</th>
+                                                <th>Bonus</th>
+                                                <th>Total Deposit</th>
+                                                <th>Total Profit</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                            <tr>
+                                                            <form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">1</label></td>
+                                                                    <td><label style="width:250px;">morrisjoshuamarlon114@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1132" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">2</label></td>
+                                                                    <td><label style="width:250px;">cyrildivine31@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1134" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">3</label></td>
+                                                                    <td><label style="width:250px;">knshlws@yahoo.com</label></td>
+                                                                    <td><label style="width:100px;">$27600</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="450"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="12898"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="14252"></td>
+                                                                    <td>
+                                                                        <input value="1135" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">4</label></td>
+                                                                    <td><label style="width:250px;">maaribrown@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$3480</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="1180"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="2100"></td>
+                                                                    <td>
+                                                                        <input value="1136" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">5</label></td>
+                                                                    <td><label style="width:250px;">rhweems87@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$231446</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="10600"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="15697"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="205095"></td>
+                                                                    <td>
+                                                                        <input value="1137" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">6</label></td>
+                                                                    <td><label style="width:250px;">zeljka22jr@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$327501</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="300"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="101546"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="225755"></td>
+                                                                    <td>
+                                                                        <input value="1138" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">7</label></td>
+                                                                    <td><label style="width:250px;">dcalvin681@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1139" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">8</label></td>
+                                                                    <td><label style="width:250px;">craigalex1900@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$70870</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="300"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="158850"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="438140"></td>
+                                                                    <td>
+                                                                        <input value="1140" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">9</label></td>
+                                                                    <td><label style="width:250px;">officialscotteastwood5000@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$103540</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="300"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="800"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="50540"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="182560"></td>
+                                                                    <td>
+                                                                        <input value="1141" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">10</label></td>
+                                                                    <td><label style="width:250px;">hcuzu12@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1143" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">11</label></td>
+                                                                    <td><label style="width:250px;">marlonjoshuaspencer11@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1144" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">12</label></td>
+                                                                    <td><label style="width:250px;">robert.nicholas.naifeh.iii@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1145" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">13</label></td>
+                                                                    <td><label style="width:250px;">sainaam13@yahoo.com</label></td>
+                                                                    <td><label style="width:100px;">$26150</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="100"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="20050"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="6000"></td>
+                                                                    <td>
+                                                                        <input value="1146" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">14</label></td>
+                                                                    <td><label style="width:250px;">lealasheila@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1147" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">15</label></td>
+                                                                    <td><label style="width:250px;">philipsherwood771@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1148" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">16</label></td>
+                                                                    <td><label style="width:250px;">alypg23@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1149" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">17</label></td>
+                                                                    <td><label style="width:250px;">danielleyayala@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1150" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">18</label></td>
+                                                                    <td><label style="width:250px;">thandimakhanya06@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$10108</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="100"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="10008"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1151" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">19</label></td>
+                                                                    <td><label style="width:250px;">phyllism913@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$20450</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="100"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="20350"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1153" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">20</label></td>
+                                                                    <td><label style="width:250px;">gregmhilton2@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1154" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">21</label></td>
+                                                                    <td><label style="width:250px;">corneliaj201527@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$20200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="20000"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1156" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">22</label></td>
+                                                                    <td><label style="width:250px;">sainaam13@yahoo.com</label></td>
+                                                                    <td><label style="width:100px;">$26150</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="100"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="20050"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="6000"></td>
+                                                                    <td>
+                                                                        <input value="1157" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">23</label></td>
+                                                                    <td><label style="width:250px;">sibanandam@yahoo.co.uk</label></td>
+                                                                    <td><label style="width:100px;">$35150</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="100"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="20050"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="15000"></td>
+                                                                    <td>
+                                                                        <input value="1158" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">24</label></td>
+                                                                    <td><label style="width:250px;">aprilalana6@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$138124</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="1500"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="58384"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="198240"></td>
+                                                                    <td>
+                                                                        <input value="1159" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">25</label></td>
+                                                                    <td><label style="width:250px;">davidsmorris20@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1160" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">26</label></td>
+                                                                    <td><label style="width:250px;">jacktheearl@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$17250</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="1000"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="16250"></td>
+                                                                    <td>
+                                                                        <input value="1161" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">27</label></td>
+                                                                    <td><label style="width:250px;">Needahug34@Gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$200</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="200"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1162" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">28</label></td>
+                                                                    <td><label style="width:250px;">jellevantwembeke@yahoo.com</label></td>
+                                                                    <td><label style="width:100px;">$500</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="500"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1163" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">29</label></td>
+                                                                    <td><label style="width:250px;">dbassey431@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1164" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">30</label></td>
+                                                                    <td><label style="width:250px;">nwabuazuchukwuca@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1165" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">31</label></td>
+                                                                    <td><label style="width:250px;">nelsondisi2020@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1166" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                                            <tr>
+<form action="/Admin/UpdateTransactionLogs" id="UpdateLogDataForm" method="post"></form>                                                                    <td><label style="width:50px;">32</label></td>
+                                                                    <td><label style="width:250px;">kelvinjames5699@gmail.com</label></td>
+                                                                    <td><label style="width:100px;">$0.00</label></td>
+                                                                    <td><input style="width:150px;" name="RefBonus" class="form-control" placeholder="Enter user's total ref bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="Bonus" class="form-control" placeholder="Enter user's total bonus amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalDeposit" class="form-control" placeholder="Enter user's total deposit amount" value="0.00"></td>
+                                                                    <td><input style="width:150px;" name="TotalProfit" class="form-control" placeholder="Enter user's total profit" value="0.00"></td>
+                                                                    <td>
+                                                                        <input value="1167" name="Row" hidden="">
+                                                                        <button type="submit" class="btn-2" tooltip="Save changes made to this row">
+                                                                            Save Changes
+                                                                        </button>
+
+                                                                    </td>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHF_8bL7or9WQFv5ccUn0swogAYQ1S-lhx-mXayXF-yHRYVQOEGcqsI5uhBH3bokdRS7nL4yp_tmTO8J4cHy5aU04Tri6xPpnBOQpXZuZpRQ_Rrf-Vb3WOCwBGxJkgNoCvw">                                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#UpdateLogDataForm", function () {
+        return confirm("Are you sure you want to update this users transaction logs?");
+    });</script>
+
+
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body>
+</html>

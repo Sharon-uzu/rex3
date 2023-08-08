@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FAQ - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark" style="background-color:#4f5966 ">
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div id="faqDiv" runat="server" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Add FAQ</h5>
+                                <div class="settings-profile">
+<form action="/Admin/AddFAQ" id="AddFAQForm" method="post">                                        <div class="form-row mt-4">
+                                            <div class="col-md-3 mb-3">
+                                                <label>Group</label>
+                                                <select name="Category" style="width:100%;" class="custom-select">
+                                                    <option value="General" selected="">General</option>
+                                                    <option value="Technical">Technical</option>
+                                                    <option value="Services">Services</option>
+                                                    <option value="Billing">Billing</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="emailAddress">Question</label>
+                                                <input type="text" class="form-control" name="Question" placeholder="FAQ" required="">
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label>Answer</label>
+                                                <input type="text" class="form-control" name="Answer" placeholder="Answer" required="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="submit" class="btn-2 mt-4" style="height:50px;">Submit</button>
+                                            </div>
+                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Frequently Asked Questions</h5>
+                                <div class="wallet-history">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Group</th>
+                                                <th>Question</th>
+                                                <th>Answer</th>
+                                                <th>Category</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                            <tr>
+                                                                <td><label style="width:50px;">1</label></td>
+                                                                <td><label style="width:100px;">Services</label></td>
+                                                                <td><input class="form-control" id="question_19" style="width:600px;" required="" value="Investment policy? "></td>
+                                                                <td><input class="form-control" id="answer_19" style="width:800px;" required="" value="You can invest with any cryptocurrency."></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_19" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services" selected="">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="19" name="Row" hidden="">
+                                                                                    <input value="Investment policy? " id="hiddenQuestion_19" name="Question" hidden="">
+                                                                                    <input value="You can invest with any cryptocurrency." id="hiddenAnswer_19" name="Answer" hidden="">
+                                                                                    <input value="Services" id="hiddenCategory_19" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(19)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="19" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">2</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_18" style="width:600px;" required="" value="Limits on portfolio"></td>
+                                                                <td><input class="form-control" id="answer_18" style="width:800px;" required="" value=" no limits to  portfolio. You can have as much investments as you want. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_18" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="18" name="Row" hidden="">
+                                                                                    <input value="Limits on portfolio" id="hiddenQuestion_18" name="Question" hidden="">
+                                                                                    <input value=" no limits to  portfolio. You can have as much investments as you want. " id="hiddenAnswer_18" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_18" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(18)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="18" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">3</label></td>
+                                                                <td><label style="width:100px;">Billing</label></td>
+                                                                <td><input class="form-control" id="question_16" style="width:600px;" required="" value="Can I fund my wallet using one currency and withdraw in another?"></td>
+                                                                <td><input class="form-control" id="answer_16" style="width:800px;" required="" value="Yes."></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_16" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing" selected="">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="16" name="Row" hidden="">
+                                                                                    <input value="Can I fund my wallet using one currency and withdraw in another?" id="hiddenQuestion_16" name="Question" hidden="">
+                                                                                    <input value="Yes." id="hiddenAnswer_16" name="Answer" hidden="">
+                                                                                    <input value="Billing" id="hiddenCategory_16" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(16)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="16" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">4</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_15" style="width:600px;" required="" value="What are the benefits of joining via an agent?"></td>
+                                                                <td><input class="form-control" id="answer_15" style="width:800px;" required="" value="Joining via one of representatives allows you to our promo packages account top-up. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_15" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="15" name="Row" hidden="">
+                                                                                    <input value="What are the benefits of joining via an agent?" id="hiddenQuestion_15" name="Question" hidden="">
+                                                                                    <input value="Joining via one of representatives allows you to our promo packages account top-up. " id="hiddenAnswer_15" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_15" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(15)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="15" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">5</label></td>
+                                                                <td><label style="width:100px;">Services</label></td>
+                                                                <td><input class="form-control" id="question_14" style="width:600px;" required="" value="What are the age exceptions? "></td>
+                                                                <td><input class="form-control" id="answer_14" style="width:800px;" required="" value="Adults Over 18 have no exceptions to join. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_14" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services" selected="">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="14" name="Row" hidden="">
+                                                                                    <input value="What are the age exceptions? " id="hiddenQuestion_14" name="Question" hidden="">
+                                                                                    <input value="Adults Over 18 have no exceptions to join. " id="hiddenAnswer_14" name="Answer" hidden="">
+                                                                                    <input value="Services" id="hiddenCategory_14" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(14)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="14" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">6</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_13" style="width:600px;" required="" value="Is the promotion of Invest Answers limited to spams? "></td>
+                                                                <td><input class="form-control" id="answer_13" style="width:800px;" required="" value="Absolutely YES, Remember All Spammers' Accounts Will Immediately Be Closed Without Any Compensation. The email scams can be reported to the Electronic Messaging Compliance team. Links to scam web pages have been removed. We Have A Zero Tolerance Policy Towards Spammers And Spamming. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_13" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="13" name="Row" hidden="">
+                                                                                    <input value="Is the promotion of Invest Answers limited to spams? " id="hiddenQuestion_13" name="Question" hidden="">
+                                                                                    <input value="Absolutely YES, Remember All Spammers' Accounts Will Immediately Be Closed Without Any Compensation. The email scams can be reported to the Electronic Messaging Compliance team. Links to scam web pages have been removed. We Have A Zero Tolerance Policy Towards Spammers And Spamming. " id="hiddenAnswer_13" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_13" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(13)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="13" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">7</label></td>
+                                                                <td><label style="width:100px;">Billing</label></td>
+                                                                <td><input class="form-control" id="question_12" style="width:600px;" required="" value="Withdrawal limits "></td>
+                                                                <td><input class="form-control" id="answer_12" style="width:800px;" required="" value="Due to AML-related regulation,Withdrawal limit differs in regions. Contact support for more info "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_12" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing" selected="">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="12" name="Row" hidden="">
+                                                                                    <input value="Withdrawal limits " id="hiddenQuestion_12" name="Question" hidden="">
+                                                                                    <input value="Due to AML-related regulation,Withdrawal limit differs in regions. Contact support for more info " id="hiddenAnswer_12" name="Answer" hidden="">
+                                                                                    <input value="Billing" id="hiddenCategory_12" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(12)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="12" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">8</label></td>
+                                                                <td><label style="width:100px;">Billing</label></td>
+                                                                <td><input class="form-control" id="question_10" style="width:600px;" required="" value="Do you charge for wallet swap?"></td>
+                                                                <td><input class="form-control" id="answer_10" style="width:800px;" required="" value="Be Happy, we do not Charge For Any Of The Wallet Transfers. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_10" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing" selected="">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="10" name="Row" hidden="">
+                                                                                    <input value="Do you charge for wallet swap?" id="hiddenQuestion_10" name="Question" hidden="">
+                                                                                    <input value="Be Happy, we do not Charge For Any Of The Wallet Transfers. " id="hiddenAnswer_10" name="Answer" hidden="">
+                                                                                    <input value="Billing" id="hiddenCategory_10" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(10)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="10" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">9</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_9" style="width:600px;" required="" value="Password reset policy"></td>
+                                                                <td><input class="form-control" id="answer_9" style="width:800px;" required="" value="Never a part of issue you just need to Click On the Option Called Reset Password Found In The Login Page. Fill up The Details and Change Your Password. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_9" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="9" name="Row" hidden="">
+                                                                                    <input value="Password reset policy" id="hiddenQuestion_9" name="Question" hidden="">
+                                                                                    <input value="Never a part of issue you just need to Click On the Option Called Reset Password Found In The Login Page. Fill up The Details and Change Your Password. " id="hiddenAnswer_9" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_9" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(9)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="9" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">10</label></td>
+                                                                <td><label style="width:100px;">Services</label></td>
+                                                                <td><input class="form-control" id="question_8" style="width:600px;" required="" value="What kind of encryption does Invest Answers have?"></td>
+                                                                <td><input class="form-control" id="answer_8" style="width:800px;" required="" value="We provide the standard security technology for establishing an encrypted link between a web server and a browser. We do Have the Extended Validation SSL (Secure Sockets Layer) Certificate You Can Check the Details from Our Homepage. Fortunately, all data passed between the web server and browsers remain private and integral. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_8" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services" selected="">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="8" name="Row" hidden="">
+                                                                                    <input value="What kind of encryption does Invest Answers have?" id="hiddenQuestion_8" name="Question" hidden="">
+                                                                                    <input value="We provide the standard security technology for establishing an encrypted link between a web server and a browser. We do Have the Extended Validation SSL (Secure Sockets Layer) Certificate You Can Check the Details from Our Homepage. Fortunately, all data passed between the web server and browsers remain private and integral. " id="hiddenAnswer_8" name="Answer" hidden="">
+                                                                                    <input value="Services" id="hiddenCategory_8" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(8)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="8" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">11</label></td>
+                                                                <td><label style="width:100px;">Services</label></td>
+                                                                <td><input class="form-control" id="question_7" style="width:600px;" required="" value="Is their any restrictions for any specific geographical area?"></td>
+                                                                <td><input class="form-control" id="answer_7" style="width:800px;" required="" value="Nevertheless, Any One Can Join from Any Country and there are no such restrictions for any geographical area. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_7" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services" selected="">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="7" name="Row" hidden="">
+                                                                                    <input value="Is their any restrictions for any specific geographical area?" id="hiddenQuestion_7" name="Question" hidden="">
+                                                                                    <input value="Nevertheless, Any One Can Join from Any Country and there are no such restrictions for any geographical area. " id="hiddenAnswer_7" name="Answer" hidden="">
+                                                                                    <input value="Services" id="hiddenCategory_7" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(7)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="7" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">12</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_6" style="width:600px;" required="" value="What are the possibilities of wallet transfer? "></td>
+                                                                <td><input class="form-control" id="answer_6" style="width:800px;" required="" value="You Can Certainly Transfer Funds from all your wallets. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_6" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="6" name="Row" hidden="">
+                                                                                    <input value="What are the possibilities of wallet transfer? " id="hiddenQuestion_6" name="Question" hidden="">
+                                                                                    <input value="You Can Certainly Transfer Funds from all your wallets. " id="hiddenAnswer_6" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_6" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(6)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="6" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">13</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_5" style="width:600px;" required="" value="What is the limit of user account?"></td>
+                                                                <td><input class="form-control" id="answer_5" style="width:800px;" required="" value="With no restrictions, You Can Always Open Infinite Accounts from Same IP Address and but with a different email address, anytime and anywhere. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_5" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="5" name="Row" hidden="">
+                                                                                    <input value="What is the limit of user account?" id="hiddenQuestion_5" name="Question" hidden="">
+                                                                                    <input value="With no restrictions, You Can Always Open Infinite Accounts from Same IP Address and but with a different email address, anytime and anywhere. " id="hiddenAnswer_5" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_5" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(5)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="5" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">14</label></td>
+                                                                <td><label style="width:100px;">Technical</label></td>
+                                                                <td><input class="form-control" id="question_4" style="width:600px;" required="" value="Email Address replacement"></td>
+                                                                <td><input class="form-control" id="answer_4" style="width:800px;" required="" value="You can only update your email once at the time of registration. Later on to change the email you need to submit a ticket from your back office "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_4" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical" selected="">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="4" name="Row" hidden="">
+                                                                                    <input value="Email Address replacement" id="hiddenQuestion_4" name="Question" hidden="">
+                                                                                    <input value="You can only update your email once at the time of registration. Later on to change the email you need to submit a ticket from your back office " id="hiddenAnswer_4" name="Answer" hidden="">
+                                                                                    <input value="Technical" id="hiddenCategory_4" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(4)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="4" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">15</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_3" style="width:600px;" required="" value="Rexsteelz Invest Registration"></td>
+                                                                <td><input class="form-control" id="answer_3" style="width:800px;" required="" value="Yes we are globally certified In United States of America, United Kingdom &amp; United Arab Emirates and our growth is in many parts of world."></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_3" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="3" name="Row" hidden="">
+                                                                                    <input value="Rexsteelz Invest Registration" id="hiddenQuestion_3" name="Question" hidden="">
+                                                                                    <input value="Yes we are globally certified In United States of America, United Kingdom &amp; United Arab Emirates and our growth is in many parts of world." id="hiddenAnswer_3" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_3" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(3)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="3" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">16</label></td>
+                                                                <td><label style="width:100px;">Technical</label></td>
+                                                                <td><input class="form-control" id="question_2" style="width:600px;" required="" value="How do I find my my referral code?"></td>
+                                                                <td><input class="form-control" id="answer_2" style="width:800px;" required="" value="Goto your profile page, you should find it under your username and beside your profile image. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_2" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General">General</option>
+                                                                                    <option value="Technical" selected="">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="2" name="Row" hidden="">
+                                                                                    <input value="How do I find my my referral code?" id="hiddenQuestion_2" name="Question" hidden="">
+                                                                                    <input value="Goto your profile page, you should find it under your username and beside your profile image. " id="hiddenAnswer_2" name="Answer" hidden="">
+                                                                                    <input value="Technical" id="hiddenCategory_2" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(2)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="2" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">17</label></td>
+                                                                <td><label style="width:100px;">General</label></td>
+                                                                <td><input class="form-control" id="question_1" style="width:600px;" required="" value="How do I earn with my referral code?"></td>
+                                                                <td><input class="form-control" id="answer_1" style="width:800px;" required="" value="You earn 10% of the deposit made by the acquaintance you referred. So you earn everytime they make a deposit and invests. You will be notified each time your account is credited with royalties. "></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="category_1" name="Category" style="width:100px;" class="custom-select">
+                                                                                    <option value="General" selected="">General</option>
+                                                                                    <option value="Technical">Technical</option>
+                                                                                    <option value="Services">Services</option>
+                                                                                    <option value="Billing">Billing</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdateFAQ" id="UpdateFAQForm" method="post">                                                                                    <input value="1" name="Row" hidden="">
+                                                                                    <input value="How do I earn with my referral code?" id="hiddenQuestion_1" name="Question" hidden="">
+                                                                                    <input value="You earn 10% of the deposit made by the acquaintance you referred. So you earn everytime they make a deposit and invests. You will be notified each time your account is credited with royalties. " id="hiddenAnswer_1" name="Answer" hidden="">
+                                                                                    <input value="General" id="hiddenCategory_1" name="Category" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(1)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form><form action="/Admin/Delete" id="DeleteFAQForm" method="post">                                                                                    <input value="1" name="Row" hidden="">
+                                                                                    <input value="FAQRoom" name="Table" hidden="">
+                                                                                    <input value="FAQ" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete FAQ</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGkj4bpvGoNJ6aaXtOSJgDtzh1ldvzT4IyDEy9dRayep_qGPuKB7dDeH9HhtD7-uqw0lIOJvIJveyDtU-Fpx26IjHzjSj8XJI1TDupCwM3rGb9WiFwO5VAbDv5pOCi-zZc"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#AddFAQForm", function () {
+        return confirm("Are you sure you want to add this FAQ?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#UpdateFAQForm", function () {
+        return confirm("Are you sure you want to edit this FAQ?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#DeleteFAQForm", function () {
+        return confirm("Are you sure you want to delete this FAQ?");
+    });</script>
+
+<script language="javascript" type="text/javascript">function setFields(id) {
+        var question = document.getElementById("question_" + id).value;
+        document.getElementById("hiddenQuestion_" + id).value = question;
+
+        var answer = document.getElementById("answer_" + id).value;
+        document.getElementById("hiddenAnswer_" + id).value = answer;
+
+        var category = document.getElementById("category_" + id).value;
+        document.getElementById("hiddenCategory_" + id).value = category;
+    }</script>
+
+
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body></html>

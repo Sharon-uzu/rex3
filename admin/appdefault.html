@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App Default - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark" style="background-color:#4f5966 ">
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+
+                    <div id="appDefaultDiv" runat="server" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Manage Apps Default Values</h5>
+
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 1. Bitcoin Wallet Address (Copay)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="bc1qaqkuh3j69se3ee6r5wjrp86lewr0llg58fqh7c" type="text" class="form-control">
+                                                                <input name="Row" value="1" hidden="" class="form-control">
+                                                                <input name="VariableName" value="BTCWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Bitcoin Wallet Address (Copay)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 2. Ethereum Wallet Address (Copay)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="0xe1EfEce6300E54691eBEbae4e88e26D0A7038971" type="text" class="form-control">
+                                                                <input name="Row" value="2" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ETHWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Ethereum Wallet Address (Copay)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 3. Doge Coin Wallet Address (Copay)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="DPgNMZAuuqXz7eoDKg6TPy2Gt4d8tvtCM8" type="text" class="form-control">
+                                                                <input name="Row" value="4" hidden="" class="form-control">
+                                                                <input name="VariableName" value="DOGEWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Doge Coin Wallet Address (Copay)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 4. Dash Coin Wallet Address (OWNR 3)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="XhTyqshhE13FVCdqq3o76LJdNmRy3vdbtD" type="text" class="form-control">
+                                                                <input name="Row" value="5" hidden="" class="form-control">
+                                                                <input name="VariableName" value="DASHWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Dash Coin Wallet Address (OWNR 3)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 5. Stellar Wallet Address (Coinbase)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="GB3JTEGTCYKHCWK5WEXZZBFBYFVACYPTX2HPVFJ22VY7U423YY34KBZ2" type="text" class="form-control">
+                                                                <input name="Row" value="6" hidden="" class="form-control">
+                                                                <input name="VariableName" value="XLMWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Stellar Wallet Address (Coinbase)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 6. Automatic Mailer Password</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="fjolapvxiviecntc" type="text" class="form-control">
+                                                                <input name="Row" value="7" hidden="" class="form-control">
+                                                                <input name="VariableName" value="MailerPassword" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Automatic Mailer Password" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 7. Automatic Mailer Email</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="rexsteelzdesk@gmail.com" type="text" class="form-control">
+                                                                <input name="Row" value="8" hidden="" class="form-control">
+                                                                <input name="VariableName" value="MailerMail" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Automatic Mailer Email" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 8. Company Name</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Rexsteelz Invest" type="text" class="form-control">
+                                                                <input name="Row" value="9" hidden="" class="form-control">
+                                                                <input name="VariableName" value="CompanyName" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Company Name" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 9. Website</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="https://rexsteelzinvest.net" type="text" class="form-control">
+                                                                <input name="Row" value="10" hidden="" class="form-control">
+                                                                <input name="VariableName" value="Website" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Website" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 10. Promo Code Bonus Amount After Sign-Up</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="100" type="text" class="form-control">
+                                                                <input name="Row" value="11" hidden="" class="form-control">
+                                                                <input name="VariableName" value="PromoCodeBonusAmount" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Promo Code Bonus Amount After Sign-Up" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 11. Brand Name Abbreviation</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="RSI" type="text" class="form-control">
+                                                                <input name="Row" value="12" hidden="" class="form-control">
+                                                                <input name="VariableName" value="BrandInitials" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Brand Name Abbreviation" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 12. Cardano Wallet Address (CWallet)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="addr1qys5223spjyngysz76j02g9qyjrclg9nljw82nzyspt4cpsgxjz0dk2p2748r3xkzy7mupyukmjfnupr3y2307hnzkzqd5anet" type="text" class="form-control">
+                                                                <input name="Row" value="21" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ADAWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Cardano Wallet Address (CWallet)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 13. Binance Wallet Address</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="bnb1xk05h8xzy4f4t2scg232gkj99m3u24q70cudkv" type="text" class="form-control">
+                                                                <input name="Row" value="22" hidden="" class="form-control">
+                                                                <input name="VariableName" value="BNBWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Binance Wallet Address" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 14. Admin Email For Notifications</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="rexsteelzdesk@gmail.com" type="email" class="form-control">
+                                                                <input name="Row" value="29" hidden="" class="form-control">
+                                                                <input name="VariableName" value="EmailForNotifications" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Admin Email For Notifications" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 15. Restricted Country 1</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Nigeria" type="text" class="form-control">
+                                                                <input name="Row" value="31" hidden="" class="form-control">
+                                                                <input name="VariableName" value="RegionRestriction1" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Restricted Country 1" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 16. Restricted Country 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Croatia" type="text" class="form-control">
+                                                                <input name="Row" value="32" hidden="" class="form-control">
+                                                                <input name="VariableName" value="RegionRestriction2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Restricted Country 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 17. Restricted Country 3</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Mayotte" type="text" class="form-control">
+                                                                <input name="Row" value="33" hidden="" class="form-control">
+                                                                <input name="VariableName" value="RegionRestriction3" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Restricted Country 3" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 18. Support email (Seen by Clients)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="support@rexsteelzinvest.net" type="email" class="form-control">
+                                                                <input name="Row" value="34" hidden="" class="form-control">
+                                                                <input name="VariableName" value="SupportMail" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Support email (Seen by Clients)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 19. Bitcoin Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="0.001" type="text" class="form-control">
+                                                                <input name="Row" value="35" hidden="" class="form-control">
+                                                                <input name="VariableName" value="BTCMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Bitcoin Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 20. Ethereum Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="0.01" type="text" class="form-control">
+                                                                <input name="Row" value="36" hidden="" class="form-control">
+                                                                <input name="VariableName" value="EthMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Ethereum Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 21. Litecoin Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="0.1" type="text" class="form-control">
+                                                                <input name="Row" value="37" hidden="" class="form-control">
+                                                                <input name="VariableName" value="LtcMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Litecoin Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 22. Dash Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="1" type="text" class="form-control">
+                                                                <input name="Row" value="38" hidden="" class="form-control">
+                                                                <input name="VariableName" value="DashMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Dash Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 23. Doge Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="20" type="text" class="form-control">
+                                                                <input name="Row" value="39" hidden="" class="form-control">
+                                                                <input name="VariableName" value="DogeMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Doge Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 24. Cardano Minimum Deposit Amount</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="7.12" type="text" class="form-control">
+                                                                <input name="Row" value="40" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ADAMinDeposit" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Cardano Minimum Deposit Amount" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 25. Show General Report 2 on Dashboard</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true" selected="">True</option>
+                                                                                        <option value="false">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1035" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowGenReport2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show General Report 2 on Dashboard" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 26. Show Promo Code Input Field On Sign-Up Page</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true" selected="">True</option>
+                                                                                        <option value="false">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1036" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowPromoCodeOnSignUpPage" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show Promo Code Input Field On Sign-Up Page" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 27. Show Promo Code Field On Sign Up Page</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true">True</option>
+                                                                                        <option value="false" selected="">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1038" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowPromoCodeOnSignUpPage" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show Promo Code Field On Sign Up Page" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 28. USDT Wallet Address (OWNR 3)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="0xe1EfEce6300E54691eBEbae4e88e26D0A7038971" type="text" class="form-control">
+                                                                <input name="Row" value="1039" hidden="" class="form-control">
+                                                                <input name="VariableName" value="USDTWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="USDT Wallet Address (OWNR 3)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 29. Support Phone Number</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="+16469262804" type="tel" class="form-control">
+                                                                <input name="Row" value="1040" hidden="" class="form-control">
+                                                                <input name="VariableName" value="SupportPhoneNumber" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Support Phone Number" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 30. Recommended Investment - Plan Name</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Diamond" type="text" class="form-control">
+                                                                <input name="Row" value="1041" hidden="" class="form-control">
+                                                                <input name="VariableName" value="RecommendedInvestmentPlanName" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Recommended Investment - Plan Name" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 31. Recommended Investment - Plan Name 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Halloween" type="text" class="form-control">
+                                                                <input name="Row" value="1042" hidden="" class="form-control">
+                                                                <input name="VariableName" value="RecommendedInvestmentPlanName2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Recommended Investment - Plan Name 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 32. KYC Verification Period (days)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="2" type="text" class="form-control">
+                                                                <input name="Row" value="1043" hidden="" class="form-control">
+                                                                <input name="VariableName" value="KYCVerificationPeriod" hidden="" class="form-control">
+                                                                <input name="FieldName" value="KYC Verification Period (days)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 33. Support Gmail</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="info@rexsteelzinvest.net" type="email" class="form-control">
+                                                                <input name="Row" value="1044" hidden="" class="form-control">
+                                                                <input name="VariableName" value="SupportGmail" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Support Gmail" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 34. Support Telegram</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="https://telegram.com" type="url" class="form-control">
+                                                                <input name="Row" value="1045" hidden="" class="form-control">
+                                                                <input name="VariableName" value="SupportTelegram" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Support Telegram" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 35. Support WhatsApp</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="https://whatsapp.com" type="url" class="form-control">
+                                                                <input name="Row" value="1046" hidden="" class="form-control">
+                                                                <input name="VariableName" value="SupportWhatsApp" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Support WhatsApp" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 36. Home Page About Us Text 1</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="We focus on understanding the language of the market using pure price action. Whether you’re a novice or an experienced trader, we believe you could gain a unique insight into mapping market movements. The world is constantly changing. Some of the changes might pass by unnoticed, others deserve the title of revolutionary ones.  Our mission is to make a significant contribution to the implementation, growth, and long–term success of the Web 3.0 ecosystem" type="text" class="form-control">
+                                                                <input name="Row" value="1047" hidden="" class="form-control">
+                                                                <input name="VariableName" value="HomePageAboutUsText1" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Home Page About Us Text 1" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 37. Home Page About Us Text 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Moreover, as a Quantitative investing platform we have the honor to be one of the first in Cross-Chain interoperability and Cloud Mining. we see an amazing opportunity to change the world for the better by making the cryptocurrency mining process more environmentally friendly, cleaner, and faster utilizing efficiently the  reliable renewable energy to create a system less prone to Market shocks and improve resilience and energy security by diversifying power supply options." type="text" class="form-control">
+                                                                <input name="Row" value="1048" hidden="" class="form-control">
+                                                                <input name="VariableName" value="HomePageAboutUsText2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Home Page About Us Text 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 38. Home Page Banner Path 1</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="../../AdBanners/2.png" type="url" class="form-control">
+                                                                <input name="Row" value="1049" hidden="" class="form-control">
+                                                                <input name="VariableName" value="HomePageBannerPath1" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Home Page Banner Path 1" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 39. Home Page Banner Path 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="../../AdBanners/1.png" type="url" class="form-control">
+                                                                <input name="Row" value="1050" hidden="" class="form-control">
+                                                                <input name="VariableName" value="HomePageBannerPath2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Home Page Banner Path 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 40. Show Home Page Banner 1</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true">True</option>
+                                                                                        <option value="false" selected="">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1051" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowHomePageBanner1" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show Home Page Banner 1" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 41. Show Home Page Banner 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true">True</option>
+                                                                                        <option value="false" selected="">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1052" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowHomePageBanner2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show Home Page Banner 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 42. USDC Wallet address</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="Loading..." type="text" class="form-control">
+                                                                <input name="Row" value="1053" hidden="" class="form-control">
+                                                                <input name="VariableName" value="USDCWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="USDC Wallet address" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 43. Live Chat Javascript Code&lt;&gt;</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="<script src=&quot;//code.tidio.co/sunva1si1lreridkhowhsjhzdtpooo3o.js&quot; async></script>" type="text" class="form-control">
+                                                                <input name="Row" value="1054" hidden="" class="form-control">
+                                                                <input name="VariableName" value="LiveChatJSCode" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Live Chat Javascript Code<>" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 44. Google Client ID</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="359840835793-g9eron1qfkl51gc2vgsl8029hdl417t6.apps.googleusercontent.com" type="text" class="form-control">
+                                                                <input name="Row" value="1055" hidden="" class="form-control">
+                                                                <input name="VariableName" value="GoogleClientID" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Google Client ID" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 45. Litecoin Wallet (OWNR 3)</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <input placeholder="required*" name="VariableValue" step=".01" required="" value="LPY5ZoMKvYD8cfZLn9DoYzGb7UaprpzqGN" type="text" class="form-control">
+                                                                <input name="Row" value="1056" hidden="" class="form-control">
+                                                                <input name="VariableName" value="LTCWallet" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Litecoin Wallet (OWNR 3)" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                                <div class="settings-profile mb-5">
+<form action="/Admin/UpdateAppDefault" id="UpdateAppDefaultForm" method="post">                                                        <div class="form-row">
+                                                            <div class="col-md-12">
+                                                                <label for="newPass"> 46. Show Gen Report 2</label>
+                                                            </div>
+
+                                                            <div class="input-group col-md-12">
+                                                                        <select name="VariableValue" style="width:100px;" class="custom-select">
+                                                                                        <option value="true" selected="">True</option>
+                                                                                        <option value="false">False</option>
+                                                                        </select>
+                                                                <input name="Row" value="1057" hidden="" class="form-control">
+                                                                <input name="VariableName" value="ShowGenReport2" hidden="" class="form-control">
+                                                                <input name="FieldName" value="Show Gen Report 2" hidden="" class="form-control">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHGyBtR44iEAp2FhkzuVrFDUfnpuhy9EGoM_F8cVbJFDaBB9U5bJt-DdIjCSZK_qhV13B9puh5jt4bwE_l4kzZZyzu_Ps4tPb2Fwtgfc3NLLKFXiJFG1BZce23Lr6jDmsdw"></form>                                                </div>
+                                <br>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#UpdateAppDefaultForm", function () {
+        return confirm("Are you sure you want to save changes made to this field?");
+    });</script>
+
+
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body></html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head>
+    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plans - Admin Portal</title>
+    <link rel="icon" href="../portal/images/brand/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../portal/assets/css/style.css">
+    <link rel="stylesheet" href="../portal/assets/css/LiveChatAdmin.css">
+
+    <style>
+        .mobile-nav {
+            background: #1C2030;
+            position: fixed;
+            bottom: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 200;
+        }
+
+        .bloc-icon {
+            color: #F8FAFB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .bloc-icon img {
+                width: 30px;
+            }
+
+        @media screen and (min-width: 600px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body id="dark" style="background-color:#4f5966 ">
+    <header class="dark-bb">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../portal/images/brand/logo.png" id="brandLogo" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerMenu" aria-controls="headerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="headerMenu">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="promo.html">
+                            Promo Codes
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Users
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adminUsers.html">Users</a>
+                            <a class="dropdown-item" href="referrals.html">Referrals</a>
+                            <a class="dropdown-item" href="kyc.html">KYC</a>
+                            <a class="dropdown-item" href="transaction.html">Transaction Log</a>
+                            <a class="dropdown-item" href="withdrawalrequest.html">Withdrawal Request</a>
+                            <a class="dropdown-item" href="notification.html">Notifications</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="admins.html">Admins</a>
+                            <a class="dropdown-item" href="appdefault.html">App Default</a>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Investment
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="plans.html">Plans</a>
+                            <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false" href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form action="AdminSignin.html" id="SignOutForm" method="post">                            <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button type="submit" text="Sign Out" class="btn-2">Sign Out</button>
+                        </li>
+                    </ul>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Lt19W_o3OJCq5QqU8GCf--R_5iXpvbvvupdu6UrYEmc1z_OxmfLGmQHpNzhvfeBlTMsx00qE6H2qm7NUp7WeXijT4b3NM_yXtYc_baxFjeVV5GbKnHJ6kIWjMJpCKiS1Zydxh40To2wRP5w19b2CE4"></form>
+
+            </div>
+        </nav>
+    </header>
+
+      
+
+<div class="settings mtb15">
+    <div class="container-fluid">
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div id="planDiv" runat="server" visible="false" class="tab-pane fade show active" role="tabpanel">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Add Investment Plan</h5>
+                                <div class="settings-profile">
+<form action="/Admin/AddPlans" id="AddPlanForm" method="post">                                        <div class="form-row mt-4">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="emailAddress">Plan Name</label>
+                                                <input type="text" class="form-control" name="PlanName" placeholder="Plan name" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="emailAddress">Minimum Amount</label>
+                                                <input type="number" class="form-control" name="MinAmount" placeholder="Minimum amount" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label>Duration</label>
+                                                <input type="text" class="form-control" name="Duration" placeholder="Duration" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label>Daily Returns</label>
+                                                <input type="number" class="form-control" name="DailyReturns" placeholder="Daily returns" required="">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label>Number Of Pay Days Per Week</label>
+                                                <select name="DaysPerWeek" style="width:100%;" class="custom-select">
+                                                    <option value="5" selected="">5 Days</option>
+                                                    <option value="7">7 Days</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn-2 mt-4" style="height:50px;">Submit</button>
+                                            </div>
+                                        </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form>                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Plans</h5>
+                                <div class="wallet-history">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Plan</th>
+                                                <th>Min-Amount</th>
+                                                <th>Duration</th>
+                                                <th>Daily Returns (%)</th>
+                                                <th>Weekly Returns (%)</th>
+                                                <th>Visible</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                            <tr>
+                                                                <td><label style="width:50px;">1</label></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="planName_17" name="PlanName" placeholder="Plane name" value="Diamond"></td>
+                                                                <td><input required="" style="width:100px;" type="number" class="form-control" id="minAmount_17" name="MinAmount" placeholder="Minimum amount" value="100000"></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="duration_17" name="Duration" placeholder="Duration" value="4 Months"></td>
+                                                                <td><input required="" style="width:75px;" type="number" class="form-control" id="dailyReturns_17" name="DailyReturns" placeholder="Daily returns in percentage" value="9"></td>
+                                                                <td><label style="width:75px;">45%</label></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="visible_17" name="Visible" style="width:100px;" class="custom-select">
+                                                                                    <option value="true" selected="">true</option>
+                                                                                    <option value="false">false</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdatePlan" id="UpdatePlanForm" method="post">                                                                                    <input value="17" name="Row" hidden="">
+                                                                                    <input value="Diamond" id="hiddenPlanName_17" name="PlanName" hidden="">
+                                                                                    <input value="100000" id="hiddenMinAmount_17" name="MinAmount" hidden="">
+                                                                                    <input value="4 Months" id="hiddenDuration_17" name="Duration" hidden="">
+                                                                                    <input value="9" id="hiddenDailyReturns_17" name="DailyReturns" hidden="">
+                                                                                    <input value="true" id="hiddenVisible_17" name="Visible" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(17)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form><form action="/Admin/Delete" id="DeletePlanForm" method="post">                                                                                    <input value="17" name="Row" hidden="">
+                                                                                    <input value="PlanRoom" name="Table" hidden="">
+                                                                                    <input value="Plans" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete Plan</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">2</label></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="planName_16" name="PlanName" placeholder="Plane name" value="Silver"></td>
+                                                                <td><input required="" style="width:100px;" type="number" class="form-control" id="minAmount_16" name="MinAmount" placeholder="Minimum amount" value="20000"></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="duration_16" name="Duration" placeholder="Duration" value="4 Months"></td>
+                                                                <td><input required="" style="width:75px;" type="number" class="form-control" id="dailyReturns_16" name="DailyReturns" placeholder="Daily returns in percentage" value="6"></td>
+                                                                <td><label style="width:75px;">30%</label></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="visible_16" name="Visible" style="width:100px;" class="custom-select">
+                                                                                    <option value="true" selected="">true</option>
+                                                                                    <option value="false">false</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdatePlan" id="UpdatePlanForm" method="post">                                                                                    <input value="16" name="Row" hidden="">
+                                                                                    <input value="Silver" id="hiddenPlanName_16" name="PlanName" hidden="">
+                                                                                    <input value="20000" id="hiddenMinAmount_16" name="MinAmount" hidden="">
+                                                                                    <input value="4 Months" id="hiddenDuration_16" name="Duration" hidden="">
+                                                                                    <input value="6" id="hiddenDailyReturns_16" name="DailyReturns" hidden="">
+                                                                                    <input value="true" id="hiddenVisible_16" name="Visible" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(16)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form><form action="/Admin/Delete" id="DeletePlanForm" method="post">                                                                                    <input value="16" name="Row" hidden="">
+                                                                                    <input value="PlanRoom" name="Table" hidden="">
+                                                                                    <input value="Plans" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete Plan</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">3</label></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="planName_15" name="PlanName" placeholder="Plane name" value="Gold"></td>
+                                                                <td><input required="" style="width:100px;" type="number" class="form-control" id="minAmount_15" name="MinAmount" placeholder="Minimum amount" value="50000"></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="duration_15" name="Duration" placeholder="Duration" value="4 Months"></td>
+                                                                <td><input required="" style="width:75px;" type="number" class="form-control" id="dailyReturns_15" name="DailyReturns" placeholder="Daily returns in percentage" value="5.5"></td>
+                                                                <td><label style="width:75px;">38.5%</label></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="visible_15" name="Visible" style="width:100px;" class="custom-select">
+                                                                                    <option value="true" selected="">true</option>
+                                                                                    <option value="false">false</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdatePlan" id="UpdatePlanForm" method="post">                                                                                    <input value="15" name="Row" hidden="">
+                                                                                    <input value="Gold" id="hiddenPlanName_15" name="PlanName" hidden="">
+                                                                                    <input value="50000" id="hiddenMinAmount_15" name="MinAmount" hidden="">
+                                                                                    <input value="4 Months" id="hiddenDuration_15" name="Duration" hidden="">
+                                                                                    <input value="5.5" id="hiddenDailyReturns_15" name="DailyReturns" hidden="">
+                                                                                    <input value="true" id="hiddenVisible_15" name="Visible" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(15)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form><form action="/Admin/Delete" id="DeletePlanForm" method="post">                                                                                    <input value="15" name="Row" hidden="">
+                                                                                    <input value="PlanRoom" name="Table" hidden="">
+                                                                                    <input value="Plans" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete Plan</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><label style="width:50px;">4</label></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="planName_4" name="PlanName" placeholder="Plane name" value="Bronze"></td>
+                                                                <td><input required="" style="width:100px;" type="number" class="form-control" id="minAmount_4" name="MinAmount" placeholder="Minimum amount" value="10000"></td>
+                                                                <td><input required="" style="width:200px;" type="text" class="form-control" id="duration_4" name="Duration" placeholder="Duration" value="3 Months"></td>
+                                                                <td><input required="" style="width:75px;" type="number" class="form-control" id="dailyReturns_4" name="DailyReturns" placeholder="Daily returns in percentage" value="4"></td>
+                                                                <td><label style="width:75px;">28%</label></td>
+                                                                <td style="width:100px;">
+                                                                    <select id="visible_4" name="Visible" style="width:100px;" class="custom-select">
+                                                                                    <option value="true" selected="">true</option>
+                                                                                    <option value="false">false</option>
+                                                                    </select>
+                                                                </td>
+                                                                <td>
+                                                                    <ul class="navbar-nav mr-auto">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <ion-icon name="menu-outline" role="img" class="md hydrated" aria-label="menu outline"></ion-icon>
+                                                                            </a>
+                                                                            <div class="dropdown-menu">
+<form action="/Admin/UpdatePlan" id="UpdatePlanForm" method="post">                                                                                    <input value="4" name="Row" hidden="">
+                                                                                    <input value="Bronze" id="hiddenPlanName_4" name="PlanName" hidden="">
+                                                                                    <input value="10000" id="hiddenMinAmount_4" name="MinAmount" hidden="">
+                                                                                    <input value="3 Months" id="hiddenDuration_4" name="Duration" hidden="">
+                                                                                    <input value="4" id="hiddenDailyReturns_4" name="DailyReturns" hidden="">
+                                                                                    <input value="true" id="hiddenVisible_4" name="Visible" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" onclick="setFields(4)" style="color:white;">Save Changes</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form><form action="/Admin/Delete" id="DeletePlanForm" method="post">                                                                                    <input value="4" name="Row" hidden="">
+                                                                                    <input value="PlanRoom" name="Table" hidden="">
+                                                                                    <input value="Plans" name="WebPage" hidden="">
+                                                                                    <button type="submit" class="dropdown-item" style="color:white;">Delete Plan</button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8I2Xb82c911Kr1rtwL7AUHEFDfyXPlm9DI7-sxI_bBEqfR7p56t-r5mnrLBVlWXZ8QvCVRtzU7e3dCSRql2UZu4JSo_nUkt9NttMn7-wFpE39QFrx-3vMPwaX5B2b0K8H0EW0zMoFLofn3n5VtgBODU"></form>                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">$("body").on("submit", "#AddPlanForm", function () {
+        return confirm("Are you sure you want to add this plan?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#UpdatePlanForm", function () {
+        return confirm("Are you sure you want to edit this plan?");
+    });</script>
+<script type="text/javascript">$("body").on("submit", "#DeletePlanForm", function () {
+        return confirm("Are you sure you want to delete this plan?");
+    });</script>
+
+<script language="javascript" type="text/javascript">function setFields(id) {
+    var planName = document.getElementById("planName_" + id).value;
+    document.getElementById("hiddenPlanName_" + id).value = planName;
+
+    var minAmount = document.getElementById("minAmount_" + id).value;
+    document.getElementById("hiddenMinAmount_" + id).value = minAmount;
+
+    var duration = document.getElementById("duration_" + id).value;
+    document.getElementById("hiddenDuration_" + id).value = duration;
+
+    var dailyReturns = document.getElementById("dailyReturns_" + id).value;
+    document.getElementById("hiddenDailyReturns_" + id).value = dailyReturns;
+
+    var visible = document.getElementById("visible_" + id).value;
+    document.getElementById("hiddenVisible_" + id).value = visible;
+    }</script>
+
+
+<nav class="mobile-nav">
+    <a class="bloc-icon" title="Plans" href="plans.html">
+        <img src="../portal/assets/img/Pie Chart_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Portfolios" href="portfolio.html">
+        <img src="../portal/assets/img/Moleskine_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Notifications" href="notification.html">
+        <img src="../portal/assets/img/Notification_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="FAQ" href="faq.html">
+        <img src="../portal/assets/img/About_26px.png" width="20">
+    </a>
+    <a class="bloc-icon" title="Users" href="adminUsers.html">
+        <img src="../portal/assets/img/User Male_26px.png" width="20">
+    </a>
+</nav>
+
+    <script src="../portal/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../portal/assets/js/popper.min.js"></script>
+    <script src="../portal/assets/js/bootstrap.min.js"></script>
+    <script src="../portal/assets/js/amcharts-core.min.js"></script>
+    <script src="../portal/assets/js/amcharts.min.js"></script>
+    <script src="../portal/assets/js/custom.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">$("body").on("submit", "#SignOutForm", function () {
+            return confirm("Are you sure you want to sign out?");
+        });</script>
+
+    
+
+
+</body></html>
